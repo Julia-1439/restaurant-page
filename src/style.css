@@ -1,4 +1,9 @@
 html {
+
+  /* Custom CSS properties */
+  --content-gap-size: 25px;
+  --card-pad-size: 15px;
+
   --palette-light: #FFE5EC;
   --palette-dark: #FFB3C6;
   --palette-accent: #FB6F92;
@@ -6,9 +11,45 @@ html {
   --palette-light-gray: #E2E8F0;
 }
 
+body {
+  background-image: url(./assets/background.jpg);
+  background-size: cover;
+  background-position-y: center;
+  background-attachment: fixed;
+}
+
 #content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  padding: 25px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: var(--content-gap-size);
+
+  width: clamp(calc(45ch + 2*var(--card-pad-size) + 2*var(--content-gap-size)), 75%, 725px);
+  margin: var(--content-gap-size) auto;
+  padding: var(--content-gap-size);
+
+  border: 1px solid black;
+  background-color: var(--palette-light);
+}
+
+.card {
+  width: clamp(calc(45ch + 2*var(--card-pad-size)), 75%, calc(75ch + 2*var(--card-pad-size))); 
+  padding: var(--card-pad-size);
+  background-color: var(--palette-dark);
+}
+
+.title-card {
+  width: clamp(calc(45ch + 2*var(--card-pad-size)), 100%, calc(75ch + 2*var(--card-pad-size))); 
+  text-align: center;
+}
+
+blockquote {
+  margin: revert;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  padding-left: var(--content-gap-size);
 }
