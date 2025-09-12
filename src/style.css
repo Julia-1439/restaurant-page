@@ -53,7 +53,8 @@ nav::before {
   font-size: 1.25rem;
 
   border: none;
-  border-radius: 0 0 8px 8px;
+  border-bottom: 6px solid var(--palette-accent);
+  border-radius: 0 0 6px 6px;
   cursor: pointer;
 }
 
@@ -63,8 +64,6 @@ nav::before {
 
 .nav-btn:active {
   background-color: revert;
-  outline: 2px solid white;
-  outline-offset: 2px;
 }
 
 
@@ -86,6 +85,7 @@ nav::before {
   width: clamp(calc(45ch + 2*var(--card-pad-size)), 75%, calc(75ch + 2*var(--card-pad-size))); 
   padding: var(--card-pad-size);
   background-color: var(--palette-dark);
+  box-shadow: 0px 4px 6px -3px var(--palette-accent);
 }
 
 .title-card {
