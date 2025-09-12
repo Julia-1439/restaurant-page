@@ -38,7 +38,7 @@ function generateHome(doc) {
     })()
   );
 
-  const aboutCard = createCard(doc);
+  const aboutCard = createCard(doc, "accent-card");
   aboutCard.appendChild(
     (() => {
       const p = doc.createElement("p");
@@ -47,7 +47,7 @@ function generateHome(doc) {
     })()
   );
 
-  const quoteCard = createCard(doc);
+  const quoteCard = createCard(doc, "accent-card");
   quoteCard.appendChild(
     (() => {
       const blockQuote = doc.createElement("blockquote");
@@ -59,7 +59,7 @@ function generateHome(doc) {
     })()
   );
 
-  const hoursCard = createCard(doc);
+  const hoursCard = createCard(doc, "accent-card");
   hoursCard.append(
     ...(() => {
       const h2first = doc.createElement("h2");
