@@ -33,6 +33,18 @@ nav {
 
   display: flex;
   justify-content: space-around;
+
+  position: relative;
+}
+
+nav::before {
+  content: "🍓";
+  font-size: 4rem;
+  display: inline;
+
+  position: absolute;
+  left: -50px;
+  top: -12px;
 }
 
 .nav-btn {
