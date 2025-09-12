@@ -73,7 +73,7 @@ function generateHome(doc) {
       const h2second = doc.createElement("h2");
       h2second.textContent = "Location";
       const address = doc.createElement("address");
-      address.textContent = "🏠 123 Street St., Town Center, WA 92123\n📞 (123) 456-7890";
+      address.innerHTML = "🏠 123 Street St., Town Center, WA 92123<br>📞 (123) 456-7890";
 
       return [h2first, ul, h2second, address];
     })()
