@@ -1,9 +1,12 @@
 html {
 
   /* Custom CSS properties */
-  --main-content-width: clamp(calc(45ch + 2*var(--card-pad-size) + 2*var(--content-gap-size)), 75%, 725px);
-  --content-gap-size: 25px;
+  --main-content-width: clamp(calc(45ch + 2*var(--card-pad-size) + 2*var(--content-pad-size) + 2*var(--ridge-width)), 75%, calc(75ch + 2*var(--card-pad-size) + 2*var(--content-pad-size) + 2*var(--ridge-width)));
+  --card-width: clamp(calc(45ch + 2*var(--card-pad-size)), 75%, calc(75ch + 2*var(--card-pad-size)));
+  --title-card-width: clamp(calc(45ch + 2*var(--card-pad-size)), 100%, calc(75ch + 2*var(--card-pad-size)));
+  --content-pad-size: 25px;
   --card-pad-size: 15px;
+  --ridge-width: 8px;
 
   --palette-light: #FFE5EC;
   --palette-dark: #FFB3C6;
@@ -28,7 +31,7 @@ nav {
   width: var(--main-content-width);
   height: 4.0rem;
   background-color: var(--palette-dark);
-  border: 8px ridge;
+  border: var(--ridge-width) ridge;
   border-top: none;
 
   display: flex;
@@ -71,18 +74,18 @@ nav::before {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  gap: var(--content-gap-size);
+  gap: var(--content-pad-size);
 
   width: var(--main-content-width);
-  margin: var(--content-gap-size) auto;
-  padding: var(--content-gap-size);
+  margin: var(--content-pad-size) auto;
+  padding: var(--content-pad-size);
 
-  border: 8px ridge;
+  border: var(--ridge-width) ridge;
   background-color: var(--palette-light);
 }
 
 .card {
-  width: clamp(calc(45ch + 2*var(--card-pad-size)), 75%, calc(75ch + 2*var(--card-pad-size))); 
+  width: var(--card-width);
   padding: var(--card-pad-size);
   background-color: var(--palette-dark);
   box-shadow: 0px 4px 6px -3px var(--palette-accent);
@@ -90,7 +93,7 @@ nav::before {
 }
 
 .title-card {
-  width: clamp(calc(45ch + 2*var(--card-pad-size)), 100%, calc(75ch + 2*var(--card-pad-size))); 
+  width: var(--title-card-width); 
   text-align: center;
 }
 
@@ -102,7 +105,7 @@ ul {
   list-style-type: none;
 }
 li {
-  padding-left: var(--content-gap-size);
+  padding-left: var(--content-pad-size);
 }
 
 .card h2:not(:nth-of-type(1)) {
