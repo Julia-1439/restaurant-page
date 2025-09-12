@@ -96,6 +96,22 @@ nav::before {
   text-align: center;
 }
 
+/* Supports creating a grid with two cards on each row */
+.cards-container {
+  width: var(--card-width); 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--card-pad-size);
+}
+
+.cards-container > .card {
+  width: revert;
+}
+
+.menu-image {
+  height: 100%;
+}
+
 blockquote {
   margin: revert;
 }
@@ -111,3 +127,28 @@ li {
   margin-top: var(--card-pad-size);
 }
 
+h2:has(+.menu-item) {
+  margin-bottom: revert;
+}
+
+.accent-card {
+  border-left: 8px solid var(--palette-accent);
+}
+
+.menu-item {
+  font-weight: bold;
+  position: relative;
+}
+
+.menu-price {
+  font-weight: normal;
+  position: absolute;
+  right: 50%;
+}
+
+.menu-favorite {
+  display: inline;
+  font-weight: normal;
+  position: absolute;
+  right: 6%;
+}

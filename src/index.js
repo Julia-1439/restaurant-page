@@ -5,7 +5,7 @@ import generateMenu from "./menu-content.js";
 import generateContact from "./contact-content.js";
 
 const displayControl = (function (doc) {
-  generateHome(doc);
+  // generateHome(doc);
 
   const nav = doc.querySelector("nav");
   const navButtons = nav.querySelectorAll("button");
