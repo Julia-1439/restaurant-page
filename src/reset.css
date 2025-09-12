@@ -19,3 +19,8 @@ img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}

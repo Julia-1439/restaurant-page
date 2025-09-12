@@ -1,6 +1,7 @@
 html {
 
   /* Custom CSS properties */
+  --main-content-width: clamp(calc(45ch + 2*var(--card-pad-size) + 2*var(--content-gap-size)), 75%, 725px);
   --content-gap-size: 25px;
   --card-pad-size: 15px;
 
@@ -18,17 +19,54 @@ body {
   background-attachment: fixed;
 }
 
+header {
+  display: grid;
+  justify-items: center;
+}
+
+nav {
+  width: var(--main-content-width);
+  height: 4.0rem;
+  background-color: var(--palette-dark);
+  border: 8px ridge;
+  border-top: none;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-btn {
+  height: 70%;
+  width: 20%;
+  font-size: 1.25rem;
+
+  border: none;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: var(--palette-light-gray);
+}
+
+.nav-btn:active {
+  background-color: revert;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+
 #content {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   gap: var(--content-gap-size);
 
-  width: clamp(calc(45ch + 2*var(--card-pad-size) + 2*var(--content-gap-size)), 75%, 725px);
+  width: var(--main-content-width);
   margin: var(--content-gap-size) auto;
   padding: var(--content-gap-size);
 
-  border: 1px solid black;
+  border: 8px ridge;
   background-color: var(--palette-light);
 }
 
