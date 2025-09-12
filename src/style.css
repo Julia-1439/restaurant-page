@@ -86,6 +86,7 @@ nav::before {
   padding: var(--card-pad-size);
   background-color: var(--palette-dark);
   box-shadow: 0px 4px 6px -3px var(--palette-accent);
+  white-space: pre-wrap;
 }
 
 .title-card {
@@ -103,3 +104,8 @@ ul {
 li {
   padding-left: var(--content-gap-size);
 }
+
+.card h2:not(:nth-of-type(1)) {
+  margin-top: var(--card-pad-size);
+}
+
