@@ -5,7 +5,6 @@ import generateMenu from "./menu-content.js";
 import generateContact from "./contact-content.js";
 
 const doc = document;
-generateHome(doc);
 const nav = doc.querySelector("nav");
 const navButtons = nav.querySelectorAll("button");
 navButtons.forEach((btn) => {
@@ -22,7 +21,7 @@ navButtons.forEach((btn) => {
   });
 });
 
-
+generateHome(doc);
 
 function wipeContent() {
   const content = doc.querySelector("#content");
