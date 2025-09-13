@@ -24,6 +24,7 @@ const displayControl = (function (doc) {
     });
   });
 
+  // @TODO maybe use a more semantic way to clear it? by removing the nodes
   function wipeContent() {
     const content = doc.querySelector("#content");
     content.innerHTML = "";
