@@ -14,6 +14,62 @@
     </nav>
   </header>
   <div id="content">
+    <div class="card title-card">
+      <h1>Contact</h1>
+    </div>
+    <div class="card accent-card">
+      <address>🏠 123 Street St., Town Center, WA 92123<br>📞 (123) 456-7890</address>
+      <br>Looking for our hours? See <a>Home</a>.
+    </div>
+    <div class="card contact-card">
+      <h2>
+        Send us a message
+      </h2>
+      <form action="">
+        <div class="form-cell">
+          <label for="form-name">
+            Name
+          </label>
+          <input type="text" name="name" id="form-name">
+        </div>
+        <div class="form-cell">
+          <label for="form-user-contact">
+            Your contact info (phone or email)
+            <input type="text" name="userContact" id="form-user-contact">
+          </label>
+        </div>
+        <div class="form-cell">
+          <fieldset>
+            <legend>May we contact you?</legend>
+            <ul>
+              <li>
+                <label>
+                  <input class="awesome-radio" type="radio" name="userApprovesContact"
+                    value="yes"> Yes
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="awesome-radio" type="radio" name="userApprovesContact"
+                    value="no"> No
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="form-cell">
+          <label for="form-msg">
+            Your message
+            <textarea name="msg" id="form-msg"
+              rows="4"
+            ></textarea>
+          </label>
+        </div>
+        <div class="form-cell">
+          <button id="submit-btn" type="button">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </body>
 </html>

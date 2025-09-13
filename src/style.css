@@ -22,6 +22,10 @@ body {
   background-attachment: fixed;
 }
 
+/* ========================================================================== */
+/* NAVIGATION BAR */
+/* ========================================================================== */
+
 header {
   display: grid;
   justify-items: center;
@@ -69,6 +73,9 @@ nav::before {
   background-color: revert;
 }
 
+/* ========================================================================== */
+/* STYLES USED BY ALL PAGES */
+/* ========================================================================== */
 
 #content {
   display: flex;
@@ -91,6 +98,10 @@ nav::before {
   box-shadow: 0px 4px 6px -3px var(--palette-accent);
 }
 
+.accent-card {
+  border-left: 8px solid var(--palette-accent);
+}
+
 .title-card {
   width: var(--title-card-width); 
   text-align: center;
@@ -108,9 +119,9 @@ nav::before {
   width: revert;
 }
 
-.menu-image {
-  height: 100%;
-}
+/* ========================================================================== */
+/* HOME PAGE */
+/* ========================================================================== */
 
 blockquote {
   margin: revert;
@@ -119,6 +130,7 @@ blockquote {
 ul {
   list-style-type: none;
 }
+
 li {
   padding-left: var(--content-pad-size);
 }
@@ -127,12 +139,16 @@ li {
   margin-top: var(--card-pad-size);
 }
 
+/* ========================================================================== */
+/* MENU PAGE */
+/* ========================================================================== */
+
 h2:has(+.menu-item) {
   margin-bottom: revert;
 }
 
-.accent-card {
-  border-left: 8px solid var(--palette-accent);
+.menu-image {
+  height: 100%;
 }
 
 .menu-item {
@@ -151,4 +167,113 @@ h2:has(+.menu-item) {
   font-weight: normal;
   position: absolute;
   right: 6%;
+}
+
+/* ========================================================================== */
+/* CONTACT PAGE */
+/* ========================================================================== */
+
+.contact-card {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--card-pad-size);
+}
+
+.form-cell {
+  flex: 1;
+  min-width: 270px;
+  max-width: calc(50% - var(--card-pad-size) / 2); /* (note) */ 
+  /* (note) the deduction from 50% makes a cell on a row by itself the same 
+  width as cells in rows with two cells */
+}
+
+.form-cell:has(textarea) {
+  flex: auto;
+  width: 100%;
+  max-width: revert;
+}
+
+input { 
+  font-family: inherit;
+  display: block;
+  height: 2rem;
+  padding: 8px;
+  border: 1px solid var(--palette-dark-gray);
+  font-size: 1rem;
+}
+input:focus {
+  outline: 1px solid black;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset li {
+  display: inline;
+}
+
+.awesome-radio {
+  appearance: none;
+  
+  width: 20px;
+  height: 20px; 
+  display: inline-block;
+  vertical-align: -10px; /* adjusts the position of the button on the text baseline */
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 5px; /* I have no idea why this works to fix the alignment */
+}
+.awesome-radio:focus {
+  outline: 1px solid #862092; 
+  outline-offset: -1px;
+}
+.awesome-radio:active {
+  border-color: black;
+}
+.awesome-radio:checked {
+  border-color: #862092;
+}
+.awesome-radio:checked::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #862092;
+  
+  /* move the ink to the center */
+  position: relative;
+  top: calc(100%/2 - 6px); 
+  left: calc(100%/2 - 6px);
+}
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  letter-spacing: 1px;
+  resize: none;
+}
+
+#submit-btn {
+  height: 2rem;
+  padding: 7px 14px;
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: white;
+}
+
+#submit-btn:hover {
+  background-color: #f0f0f0;
+}
+
+#submit-btn:active {
+  background-color: white;
 }
