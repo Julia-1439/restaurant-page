@@ -4,8 +4,9 @@ import generateHome from "./home-content.js";
 import generateMenu from "./menu-content.js";
 import generateContact from "./contact-content.js";
 
+// @note: iife module might not be needed here, but good to not have much global code I guess!
 const displayControl = (function (doc) {
-  // generateHome(doc);
+  generateHome(doc);
 
   const nav = doc.querySelector("nav");
   const navButtons = nav.querySelectorAll("button");
