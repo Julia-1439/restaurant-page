@@ -4,16 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack serve",
-    "deploy": "git subtree push --prefix dist origin gh-pages",
-    "get-pkg-details": "echo $npm_package_version $npm_package_name",
-    "cool-echo": "ls",
-    "cool-echo:prime": "npm run cool-echo -- -ltr",
-    "exit-code-test": "sh -c 'exit 1' && echo 'hello' || echo 'goodbye'",
-    "preinstall": "echo Running pre-install script",
-    "postinstall": "echo Running post-install script",
-    "roo": "NODE_ENV=\"some/directory/\" && echo \"$NODE_ENV\""
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack serve        --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +18,7 @@
     "style-loader": "^4.0.0",
     "webpack": "^5.101.3",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.2",
+    "webpack-merge": "^6.0.1"
   }
 }
