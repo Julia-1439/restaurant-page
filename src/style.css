@@ -199,21 +199,20 @@ address > p:nth-child(2)::before {
 }
 
 form {
-  display: flex;
+  display: flex; /* grid is probably a better tool here but I wanted practice with flex :) */
   flex-wrap: wrap;
   gap: var(--card-pad-size);
 }
 
 .form-cell {
-  flex: 1;
-  min-width: 270px;
+  flex: auto;
+  width : calc(50% - var(--card-pad-size) / 2);
   max-width: calc(50% - var(--card-pad-size) / 2); /* (note) */ 
   /* (note) the deduction from 50% makes a cell on a row by itself the same 
   width as cells in rows with two cells */
 }
 
 .form-cell:has(textarea) {
-  flex: auto;
   width: 100%;
   max-width: revert;
 }
