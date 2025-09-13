@@ -10,5 +10,17 @@ function createCard(doc, ...additionalClasses) {
   return card;
 }
 
+/**
+ * Sets multiple attributes on a HTML element
+ * @param {HTMLElement} ele 
+ * @param {Object} attrValuePairs 
+ * @returns 
+ */
+function setAttributes(ele, attrValuePairs) {
+  Object.entries(attrValuePairs).forEach(([attr, val]) => {
+    ele.setAttribute(attr, val);
+  });
+  return ele;
+}
 
-export { createCard };
+export { createCard, setAttributes };
