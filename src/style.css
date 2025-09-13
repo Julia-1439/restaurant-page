@@ -251,14 +251,14 @@ fieldset li {
   margin: 5px; /* I have no idea why this works to fix the alignment */
 }
 .awesome-radio:focus {
-  outline: 1px solid #862092; 
+  outline: 1px solid var(--palette-accent-2); 
   outline-offset: -1px;
 }
 .awesome-radio:active {
   border-color: black;
 }
 .awesome-radio:checked {
-  border-color: #862092;
+  border-color: var(--palette-accent-2);
 }
 .awesome-radio:checked::before {
   content: "";
@@ -266,7 +266,7 @@ fieldset li {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #862092;
+  background-color: var(--palette-accent-2);
   
   /* move the ink to the center */
   position: relative;
