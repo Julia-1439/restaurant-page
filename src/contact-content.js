@@ -1,4 +1,5 @@
-import { createCard, createFormCell, setAttributes } from "./helper.js";
+import { createCard, createFormCell, setAttributes, getLocation, getPhone } 
+  from "./helper.js";
 
 /**
  * 
@@ -21,7 +22,10 @@ function generateContact(doc) {
   addressCard.append(
     ...(() => {
       const address = doc.createElement("address");
-      address.innerText = "🏠 123 Street St., Town Center, WA 92123\n📞 (123) 456-7890";
+      const [pLocation, pPhone] = Array.from({length: 2}, () => doc.createElement("p"));
+      pLocation.textContent = getLocation();
+      pPhone.textContent = getPhone();
+      address.append(pLocation, pPhone);
       const lineBreak = doc.createElement("br");
       const homeLink = doc.createElement("a");
       homeLink.textContent = "Home";

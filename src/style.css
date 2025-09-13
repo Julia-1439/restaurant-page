@@ -182,9 +182,16 @@ li {
 /* CONTACT PAGE */
 /* ========================================================================== */
 
-/* @TODO remove the emojis from the text and make them only cosmetic */
-address {
+address > p::before {
+  font-style: normal;
+}
 
+address > p:nth-child(1)::before {
+  content: "🏠 ";
+}
+
+address > p:nth-child(2)::before {
+  content: "📞 ";
 }
 
 .contact-card {

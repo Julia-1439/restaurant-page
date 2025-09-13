@@ -33,4 +33,12 @@ function setAttributes(ele, attrValuePairs) {
   return ele;
 }
 
-export { createCard, createFormCell, setAttributes };
+function getLocation() {
+  return "123 Street St., Town Center, WA 92123";
+}
+
+function getPhone() {
+  return "(123) 456-7890";
+}
+
+export { createCard, createFormCell, setAttributes, getLocation, getPhone };

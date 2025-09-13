@@ -1,4 +1,4 @@
-import { createCard } from "./helper.js";
+import { createCard, getLocation, getPhone } from "./helper.js";
 import homeImg from "./assets/berry-tart.jpg";
 
 const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -73,8 +73,11 @@ function generateHome(doc) {
       const h2second = doc.createElement("h2");
       h2second.textContent = "Location";
       const address = doc.createElement("address");
-      address.innerText = "🏠 123 Street St., Town Center, WA 92123\n📞 (123) 456-7890";
-
+      const [pLocation, pPhone] = Array.from({length: 2}, () => doc.createElement("p"));
+      pLocation.textContent = getLocation();
+      pPhone.textContent = getPhone();
+      address.append(pLocation, pPhone);
+      
       return [h2first, ul, h2second, address];
     })()
   );
