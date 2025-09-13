@@ -182,6 +182,11 @@ li {
 /* CONTACT PAGE */
 /* ========================================================================== */
 
+/* @TODO remove the emojis from the text and make them only cosmetic */
+address {
+
+}
+
 .contact-card {
   width: 100%;
 }
