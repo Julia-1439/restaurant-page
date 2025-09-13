@@ -11,6 +11,16 @@ function createCard(doc, ...additionalClasses) {
 }
 
 /**
+ * Create a div with class "form-cell"
+ * @param {HTMLDocument} doc 
+ */
+function createFormCell(doc) {
+  const cell = doc.createElement("div");
+  cell.className = "form-cell";
+  return cell;
+}
+
+/**
  * Sets multiple attributes on a HTML element
  * @param {HTMLElement} ele 
  * @param {Object} attrValuePairs 
@@ -23,4 +33,4 @@ function setAttributes(ele, attrValuePairs) {
   return ele;
 }
 
-export { createCard, setAttributes };
+export { createCard, createFormCell, setAttributes };

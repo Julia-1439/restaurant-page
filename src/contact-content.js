@@ -1,4 +1,4 @@
-import { createCard, setAttributes } from "./helper.js";
+import { createCard, createFormCell, setAttributes } from "./helper.js";
 
 /**
  * 
@@ -146,16 +146,6 @@ function generateContact(doc) {
   );
 
   content.append(titleCard, addressCard, formCard);
-}
-
-/**
- * Helper function to create a div with class "form-cell"
- * @param {HTMLDocument} doc 
- */
-function createFormCell(doc) {
-  const cell = doc.createElement("div");
-  cell.className = "form-cell";
-  return cell;
 }
 
 export default generateContact;
