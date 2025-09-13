@@ -1,6 +1,4 @@
-import { createCard } from "./helper.js";
-
-// @TODO: a helper method for setting attribute
+import { createCard, setAttributes } from "./helper.js";
 
 /**
  * 
@@ -49,9 +47,11 @@ function generateContact(doc) {
           label.setAttribute("for", "form-name");
           label.textContent = "Name";
           const input = doc.createElement("input");
-          input.setAttribute("type", "text");
-          input.setAttribute("name", "name");
-          input.id = "form-name";
+          setAttributes(input, {
+            "id": "form-name",
+            "type": "text",
+            "name": "name",
+          });
 
           return [label, input];
         })()
@@ -64,24 +64,83 @@ function generateContact(doc) {
           label.setAttribute("for", "form-user-contact");
           label.textContent = "Your contact info (phone or email)";
           const input = doc.createElement("input");
-          input.setAttribute("type", "text");
-          input.setAttribute("name", "userContact");
-          input.id = "form-user-contact";
+          setAttributes(input, {
+            "id": "form-user-contact",
+            "type": "text",
+            "name": "userContact",
+          });
 
           return [label, input];
         })()
       );
 
       const permissionCell = createFormCell(doc);
-      permissionCell.append(
-        ...(() => {
+      permissionCell.appendChild(
+        (() => {
+          const fieldset = doc.createElement("fieldset");
+          const legend = doc.createElement("legend");
+          legend.textContent = "May we contact you?";
+          const ul = doc.createElement("ul");
+          const [li1, li2] = Array.from({length: 2}, () => doc.createElement("li"));
+          const [label1, label2] = Array.from({length: 2}, () => doc.createElement("label"));
+          const [input1, input2] = Array.from({length: 2}, () => doc.createElement("input"));
+          setAttributes(input1, {
+            "class": "awesome-radio",
+            "type": "radio",
+            "name": "userApprovesContact",
+            "value": "yes",
+          });
+          const label1text = doc.createTextNode("Yes");
+          setAttributes(input2, {
+            "class": "awesome-radio",
+            "type": "radio",
+            "name": "userApprovesContact",
+            "value": "no",
+          });
+          const label2text = doc.createTextNode("No");
 
-          return [];
+          label1.append(input1, label1text);
+          label2.append(input2, label2text);
+          li1.appendChild(label1);
+          li2.appendChild(label2);
+          ul.append(li1, li2);
+          fieldset.append(legend, ul);
+
+          return fieldset;
+        })()
+      );
+
+      const msgCell = createFormCell(doc);
+      msgCell.appendChild(
+        (() => {
+          const label = doc.createElement("label");
+          label.setAttribute("for", "form-msg");
+          label.textContent = "Your message";
+          const textArea = doc.createElement("textarea");
+          setAttributes(textArea, {
+            "name": "msg",
+            "id": "form-msg",
+            "rows": "4",
+          });
+          
+          label.appendChild(textArea);
+          return label;
+        })()
+      );
+
+      const submitCell = createFormCell(doc);
+      submitCell.appendChild(
+        (() => {
+          const button = doc.createElement("button");
+          button.id = "submit-btn";
+          button.type = "button";
+          button.textContent = "Submit";
+          
+          return button;
         })()
       );
       
-
-      form.append(nameCell, contactCell);
+      form.append(nameCell, contactCell, permissionCell, msgCell, submitCell);
       return [h2, form];
     })()
   );
