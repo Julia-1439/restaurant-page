@@ -108,6 +108,10 @@ nav::before {
   text-align: center;
 }
 
+h2 {
+  margin-bottom: revert;
+}
+
 /* Supports creating a grid with two cards on each row */
 .cards-container {
   width: var(--card-width); 
@@ -151,10 +155,6 @@ li {
 /* ========================================================================== */
 /* MENU PAGE */
 /* ========================================================================== */
-
-h2:has(+.menu-item) {
-  margin-bottom: revert;
-}
 
 .menu-image {
   height: 100%;
