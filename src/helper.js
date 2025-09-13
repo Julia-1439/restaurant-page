@@ -10,4 +10,5 @@ function createCard(doc, ...additionalClasses) {
   return card;
 }
 
-export default createCard;
+
+export { createCard };

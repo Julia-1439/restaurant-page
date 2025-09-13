@@ -1,4 +1,4 @@
-import createCard from "./card-generator.js";
+import { createCard } from "./helper.js";
 import pieImg from "./assets/berry-pie.png";
 import teaImg from "./assets/berry-iced-tea.jpeg";
 

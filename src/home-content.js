@@ -1,4 +1,4 @@
-import createCard from "./card-generator.js";
+import { createCard } from "./helper.js";
 import homeImg from "./assets/berry-tart.jpg";
 
 const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];

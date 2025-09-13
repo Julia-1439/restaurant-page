@@ -1,4 +1,4 @@
-import createCard from "./card-generator.js";
+import { createCard } from "./helper.js";
 
 // @TODO: a helper method for setting attribute
 
