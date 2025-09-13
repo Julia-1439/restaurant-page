@@ -5,8 +5,9 @@ A restaurant website dynamically generated with Javascript ES6 modules and bundl
 ## Reflection
 major concepts utilized:
 - ES6 modules to control scope and prevent namespace pollution
-- Webpack to bundle JS, HTML, & CSS code
-- npm: set up npm environment and install dev dependencies
+- Webpack to bundle JS, HTML, & CSS code 
+- Webpack merge to toggle between 'dev' or 'prod' mode
+- npm: set up npm environment, install dev dependencies, create npm scripts
 - generate pages of HTML content with JS (wow it's tedious)
   - using iife to create scopes
 - more practice with css of course! notably flexbox and responsive lengths
