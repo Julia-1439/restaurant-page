@@ -11,6 +11,14 @@ major concepts utilized:
   - using iife to create scopes
 - more practice with css of course! notably flexbox and responsive lengths
 
+## Developer setup
+```
+# Install dev dependencies
+npm install
+# Bundle using Webpack
+npx webpack
+```
+
 ## Credits
 ### Assets
 - Tart Photo by Cats Coming from Pexels: https://www.pexels.com/photo/strawberry-fruits-835752/
