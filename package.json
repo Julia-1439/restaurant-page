@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "get-pkg-details": "echo $npm_package_version $npm_package_name",
+    "cool-echo": "ls",
+    "cool-echo:prime": "npm run cool-echo -- -ltr",
+    "exit-code-test": "sh -c 'exit 1' && echo 'hello' || echo 'goodbye'",
+    "preinstall": "echo Running pre-install script",
+    "postinstall": "echo Running post-install script",
+    "roo": "NODE_ENV=\"some/directory/\" && echo \"$NODE_ENV\""
   },
   "keywords": [],
   "author": "",
