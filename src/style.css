@@ -11,6 +11,7 @@ html {
   --palette-light: #FFE5EC;
   --palette-dark: #FFB3C6;
   --palette-accent: #FB6F92;
+  --palette-accent-2: #862092;
   --palette-dark-gray: #636363;
   --palette-light-gray: #E2E8F0;
 }
@@ -117,6 +118,14 @@ nav::before {
 
 .cards-container > .card {
   width: revert;
+}
+
+a {
+  color: var(--palette-accent-2);
+}
+a:hover {
+  filter: brightness(125%);
+  cursor: pointer;
 }
 
 /* ========================================================================== */
