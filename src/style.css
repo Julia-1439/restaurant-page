@@ -36,7 +36,7 @@ nav {
   width: var(--main-content-width);
   height: 4.0rem;
   background-color: var(--palette-dark);
-  border: var(--ridge-width) ridge;
+  border: var(--ridge-width) ridge white;
   border-top: none;
 
   display: flex;
@@ -88,7 +88,7 @@ nav::before {
   margin: var(--content-pad-size) auto;
   padding: var(--content-pad-size);
 
-  border: var(--ridge-width) ridge;
+  border: var(--ridge-width) ridge white;
   background-color: var(--palette-light);
 }
 
@@ -279,6 +279,10 @@ textarea {
   padding: 8px;
   letter-spacing: 1px;
   resize: none;
+}
+
+textarea:focus {
+  outline: 1px solid black;
 }
 
 #submit-btn {
